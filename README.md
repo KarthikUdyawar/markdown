@@ -59,7 +59,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Demo of project](https://github.com/KarthikUdyawar/weather-react/blob/main/Screenshot/1.png)
+![Demo of project](https://github.com/KarthikUdyawar/markdown/blob/master/image/demo.png)
 
 Weather-react is a web-based React program to give weather information all around the world using OpenWeatherMap API.
 
