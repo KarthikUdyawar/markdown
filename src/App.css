@@ -32,10 +32,32 @@ body{
   grid-template-areas: 
   "title title"
   "textarea markdown_preview";
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   grid-template-rows: 0fr 1fr;
   grid-gap: 1rem;
 }
+
+@media (max-width: 1000px) {
+  body{
+    overflow: auto;
+  }
+
+  .markdown_container{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    height: 97vh;
+    border-radius: 1rem;
+    display: grid;
+    grid-template-areas: 
+    "title"
+    "textarea"
+    "markdown_preview";
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: 1fr 3fr 3fr;
+    grid-gap: 1rem;
+  }
+}
+
 
 .title{
   grid-area: title;
@@ -53,8 +75,8 @@ textarea{
   border-radius: 1rem;
   font-size: 18px;
   padding: 1rem;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
+  overflow-y: auto;
+  margin: 1rem;
 }
 
 .markdown_preview{
@@ -67,6 +89,5 @@ textarea{
   border-radius: 1rem;
   padding: 1rem;
   overflow-y: auto;
-  margin-bottom: 1rem;
-  margin-right: 1rem;
+  margin: 1rem;
 }
