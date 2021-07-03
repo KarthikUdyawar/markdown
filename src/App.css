@@ -1,38 +1,72 @@
-.App {
+:root {
+  --bg-color: #fff;
+  --text-color: #000;
+  --edit-bg-color: #eff1f5;
+  --preview-bg-color: #f5f3ef;
+  --edit-shadow-color: #00123583;
+  --preview-shadow-color: #2c1e007e;
+}
+
+[data-theme="dark"] {
+  --bg-color: #161616;
+  --text-color: #fff;
+  --edit-bg-color: #001235;
+  --preview-bg-color: #2c1e00;
+  --edit-shadow-color: #eff1f53b;
+  --preview-shadow-color: #f5f3ef3b;
+}
+
+body{
+  background: #000000;
+  font-size: 18px;
+  font-family: 'Courier New', Courier, monospace;
+  overflow: hidden;
+}
+
+.markdown_container{
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  height: 97vh;
+  border-radius: 1rem;
+  display: grid;
+  grid-template-areas: 
+  "title title"
+  "textarea markdown_preview";
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 0fr 1fr;
+  grid-gap: 1rem;
+}
+
+.title{
+  grid-area: title;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+textarea{
+  grid-area: textarea;
+  outline: none;
+  border: none;
+  resize: none;
+  color: var(--text-color);
+  background: var(--edit-bg-color);
+  box-shadow: 0 1rem 1rem 0 var(--edit-shadow-color);
+  border-radius: 1rem;
+  font-size: 18px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.markdown_preview{
+  grid-area: markdown_preview;
+  outline: none;
+  border: none;
+  color: var(--text-color);
+  background: var(--preview-bg-color);
+  box-shadow: 0 1rem 1rem 0 var(--preview-shadow-color);
+  border-radius: 1rem;
+  padding: 1rem;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
 }
